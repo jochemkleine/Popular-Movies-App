@@ -1,0 +1,101 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                android:orientation="vertical"
+                tools:context="android.jochemkleine.com.popularmovies.MovieDetails"
+                android:background="#57909090">
+
+    <LinearLayout
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:id="@+id/movie_information"
+        >
+
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/poster_thumbnail"
+            android:layout_margin="@dimen/movie_detail_poster_margin"
+            android:layout_weight="1"
+            android:scaleType="fitXY"/>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginRight="@dimen/movie_detail_screen_edge_margin"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/movie_release_date"
+                android:paddingTop="@dimen/movie_detail_textview_padding"
+                android:id="@+id/release_date"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:paddingTop="@dimen/movie_detail_textview_padding"
+                android:text="@string/movie_rating"
+                android:id="@+id/rating"
+                android:layout_below="@+id/release_date"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_centerVertical="true"
+                android:text="@string/movie_title"
+                android:id="@+id/movieTitle"
+                android:gravity="center"
+                android:layout_above="@+id/release_date"
+                android:layout_centerHorizontal="true"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/movie_detail_separator_height"
+        android:background="#000000"
+        android:layout_marginLeft="@dimen/movie_detail_screen_edge_margin"
+        android:layout_marginRight="@dimen/movie_detail_screen_edge_margin"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_margin="@dimen/movie_detail_screen_edge_margin"
+
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/movie_synopsis"
+            android:id="@+id/movie_plot"
+            android:gravity="fill_horizontal"
+            android:textAlignment="gravity"
+            android:textColor="#ff000000"/>
+    </ScrollView>
+
+
+</LinearLayout>
