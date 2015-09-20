@@ -37,45 +37,48 @@ public class CustomArrayAdapter extends ArrayAdapter {
         LayoutInflater inflater = LayoutInflater.from(getContext());
         View customView = inflater.inflate(R.layout.list_item_movie_overview, parent, false);
 
-        int index =0;
-        if (position == 0){
-            index = 2;
-        } else {
-            index = (position * 3) + 2;
+        if (currentMovies.size() != 0) {
+
+            int index = 0;
+            if (position == 0) {
+                index = 2;
+            } else {
+                index = (position * 3) + 2;
+            }
+
+            final int poster1Index = index - 2;
+            final int poster2Index = index - 1;
+            final int poster3Index = index;
+
+            loadPosterImage(R.id.posterImage1, customView, poster1Index);
+            loadPosterImage(R.id.posterImage2, customView, poster2Index);
+            loadPosterImage(R.id.posterImage3, customView, poster3Index);
+
+            ImageView poster1 = (ImageView) customView.findViewById(R.id.posterImage1);
+
+            poster1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mMovieOverview.launchMovieDetails(poster1Index);
+                }
+            });
+
+            ImageView poster2 = (ImageView) customView.findViewById(R.id.posterImage2);
+            poster2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mMovieOverview.launchMovieDetails(poster2Index);
+                }
+            });
+
+            ImageView poster3 = (ImageView) customView.findViewById(R.id.posterImage3);
+            poster3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mMovieOverview.launchMovieDetails(poster3Index);
+                }
+            });
         }
-
-        final int poster1Index= index-2;
-        final int poster2Index= index-1;
-        final int poster3Index= index;
-
-        loadPosterImage(R.id.posterImage1, customView, poster1Index);
-        loadPosterImage(R.id.posterImage2, customView, poster2Index);
-        loadPosterImage(R.id.posterImage3, customView, poster3Index);
-
-        ImageView poster1 = (ImageView) customView.findViewById(R.id.posterImage1);
-
-        poster1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mMovieOverview.launchMovieDetails(poster1Index);
-            }
-        });
-
-        ImageView poster2 = (ImageView) customView.findViewById(R.id.posterImage2);
-        poster2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mMovieOverview.launchMovieDetails(poster2Index);
-            }
-        });
-
-        ImageView poster3 = (ImageView) customView.findViewById(R.id.posterImage3);
-        poster3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mMovieOverview.launchMovieDetails(poster3Index);
-            }
-        });
 
         return customView;
     }

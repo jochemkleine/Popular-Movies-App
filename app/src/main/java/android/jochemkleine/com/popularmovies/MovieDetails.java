@@ -43,7 +43,6 @@ public class MovieDetails extends ActionBarActivity {
 
         TextView movieTitle = (TextView) findViewById(R.id.movieTitle);
         movieTitle.setText(selectedMovie.getTitle());
-
     }
 
     public String getMonthName (int monthIndex) {

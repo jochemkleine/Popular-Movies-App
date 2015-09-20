@@ -1,10 +1,14 @@
 package android.jochemkleine.com.popularmovies;
 
+import android.content.Context;
 import android.graphics.pdf.PdfDocument;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.text.format.Time;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
@@ -38,7 +42,6 @@ public class FetchMovieTask extends AsyncTask<Object, Void, ArrayList<Movie>> {
         // Params contain nr movie pages, movieOverview class instance.
         int recentMoviePages = (int) params[0];
         mMovieOverview = (MovieOverview) params[1];
-
         currentMovies = new ArrayList<>();
         try {
 
@@ -85,8 +88,10 @@ public class FetchMovieTask extends AsyncTask<Object, Void, ArrayList<Movie>> {
         } catch (IOException e) {
             e.printStackTrace();
             recentMoviesJsonStr = null;
+            return null;
         } catch (JSONException e) {
             e.printStackTrace();
+            return null;
         } finally {
             if (urlConnection != null) {
                 urlConnection.disconnect();
@@ -104,8 +109,13 @@ public class FetchMovieTask extends AsyncTask<Object, Void, ArrayList<Movie>> {
 
     @Override
     protected void onPostExecute(ArrayList<Movie> currentMovies) {
-        mMovieOverview.updateCurrentMovies(currentMovies);
-        mMovieOverview.updateAdapter();
+        if (currentMovies != null) {
+            mMovieOverview.updateCurrentMovies(currentMovies);
+            mMovieOverview.updateAdapter();
+        } else {
+            mMovieOverview.loadingErrorToast();
+        }
+
     }
 
     private void getMovieDataFromJson(String recentMoviesJsonStr)
@@ -134,4 +144,5 @@ public class FetchMovieTask extends AsyncTask<Object, Void, ArrayList<Movie>> {
             currentMovies.add(movie);
         }
     }
+
 }
