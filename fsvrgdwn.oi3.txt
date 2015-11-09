@@ -1,0 +1,70 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+#	new file:   .idea/inspectionProfiles/Project_Default.xml
+#	new file:   .idea/inspectionProfiles/profiles_settings.xml
+#	deleted:    PopularMovies.iml
+#	new file:   app/src/main/java/android/jochemkleine/com/popularmovies/adapters/TrailerListAdapter.java
+#	new file:   app/src/main/java/android/jochemkleine/com/popularmovies/networking/FetchPosterTask.java
+#	new file:   app/src/main/java/android/jochemkleine/com/popularmovies/networking/FetchReviewTask.java
+#	new file:   app/src/main/java/android/jochemkleine/com/popularmovies/networking/FetchTrailerTask.java
+#	new file:   app/src/main/java/android/jochemkleine/com/popularmovies/ui/MovieReviews.java
+#	new file:   app/src/main/java/android/jochemkleine/com/popularmovies/ui/Review.java
+#	new file:   app/src/main/java/android/jochemkleine/com/popularmovies/ui/Trailer.java
+#	new file:   app/src/main/res/drawable/toggle_states.xml
+#	new file:   app/src/main/res/layout/activity_movie_reviews.xml
+#	new file:   app/src/main/res/layout/list_item_review.xml
+#	new file:   app/src/main/res/layout/list_item_trailer.xml
+#
+# Changes not staged for commit:
+#	modified:   .idea/encodings.xml
+#	modified:   .idea/gradle.xml
+#	modified:   .idea/misc.xml
+#	modified:   .idea/modules.xml
+#	modified:   .idea/vcs.xml
+#	modified:   app/app.iml
+#	modified:   app/build.gradle
+#	modified:   app/src/main/AndroidManifest.xml
+#	deleted:    app/src/main/java/android/jochemkleine/com/popularmovies/CustomArrayAdapter.java
+#	deleted:    app/src/main/java/android/jochemkleine/com/popularmovies/FetchMovieTask.java
+#	deleted:    app/src/main/java/android/jochemkleine/com/popularmovies/Movie.java
+#	deleted:    app/src/main/java/android/jochemkleine/com/popularmovies/MovieDetails.java
+#	deleted:    app/src/main/java/android/jochemkleine/com/popularmovies/MovieOverview.java
+#	modified:   app/src/main/java/android/jochemkleine/com/popularmovies/adapters/TrailerListAdapter.java
+#	modified:   app/src/main/java/android/jochemkleine/com/popularmovies/networking/FetchReviewTask.java
+#	modified:   app/src/main/java/android/jochemkleine/com/popularmovies/networking/FetchTrailerTask.java
+#	modified:   app/src/main/java/android/jochemkleine/com/popularmovies/ui/MovieReviews.java
+#	modified:   app/src/main/java/android/jochemkleine/com/popularmovies/ui/Review.java
+#	modified:   app/src/main/java/android/jochemkleine/com/popularmovies/ui/Trailer.java
+#	modified:   app/src/main/res/drawable/toggle_states.xml
+#	modified:   app/src/main/res/layout/activity_movie_details.xml
+#	modified:   app/src/main/res/layout/activity_movie_reviews.xml
+#	modified:   app/src/main/res/layout/list_item_review.xml
+#	modified:   app/src/main/res/layout/list_item_trailer.xml
+#	modified:   app/src/main/res/menu/menu_main.xml
+#	modified:   app/src/main/res/menu/menu_movie_details.xml
+#	modified:   app/src/main/res/values/strings.xml
+#	modified:   build.gradle
+#
+# Untracked files:
+#	.idea/runConfigurations.xml
+#	PopularMovies.iml
+#	PopularMoviesApp/
+#	app/src/main/java/android/jochemkleine/com/popularmovies/adapters/CustomArrayAdapter.java
+#	app/src/main/java/android/jochemkleine/com/popularmovies/adapters/ReviewListAdapter.java
+#	app/src/main/java/android/jochemkleine/com/popularmovies/data/
+#	app/src/main/java/android/jochemkleine/com/popularmovies/networking/FetchMovieTask.java
+#	app/src/main/java/android/jochemkleine/com/popularmovies/ui/MovieDetails.java
+#	app/src/main/java/android/jochemkleine/com/popularmovies/ui/MovieOverview.java
+#	app/src/main/res/drawable/favorite_icon.png
+#	app/src/main/res/drawable/favorite_icon_off.png
+#	app/src/main/res/drawable/favorite_icon_on.png
+#	app/src/main/res/drawable/favorite_icon_on2.png
+#	app/src/main/res/drawable/youtube_icon.jpg
+#	app/src/main/res/drawable/youtube_icon2.png
+#
+

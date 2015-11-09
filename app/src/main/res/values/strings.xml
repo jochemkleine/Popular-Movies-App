@@ -10,5 +10,7 @@
     <string name="movie_rating">Rating</string>
     <string name="movie_release_date">Release Date</string>
     <string name="movie_synopsis">Movie Synopsis</string>
-
+    <string name="favouriteAction">Sort by favourites</string>
+    <string name="title_activity_movie_reviews">MovieReviews</string>
+    <string name="action_share">Share</string>
 </resources>

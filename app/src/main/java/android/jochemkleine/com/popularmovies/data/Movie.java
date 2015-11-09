@@ -1,4 +1,6 @@
-package android.jochemkleine.com.popularmovies;
+package android.jochemkleine.com.popularmovies.data;
+
+import android.graphics.Bitmap;
 
 import java.io.Serializable;
 
@@ -12,13 +14,20 @@ import java.io.Serializable;
  */
 public class Movie implements Serializable {
 
+    private int id;
     private String title;
     private String overview;
     private String releaseDate;
     private String posterPath;
     private double voteAverage;
     private double popularity;
+    private boolean isFavourite;
+    private byte [] posterByteArr;
+    private int entry = -1;
 
+    public Movie () {
+        this.isFavourite = false;
+    }
 
     public double getPopularity() {
         return popularity;
@@ -68,7 +77,37 @@ public class Movie implements Serializable {
         this.voteAverage = voteAverage;
     }
 
-    public Movie () {
+    public boolean isFavourite () {
+        return isFavourite;
+    }
 
+    public void setFavourite(Boolean b){
+        isFavourite = b;
+    }
+
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+
+    public byte[] getPosterByteArr() {
+        return posterByteArr;
+    }
+
+    public void setPosterByteArr(byte[] posterByteArr) {
+        this.posterByteArr = posterByteArr;
+    }
+
+    public int getEntry() {
+        return entry;
+    }
+
+    public void setEntry(int entry) {
+        this.entry = entry;
     }
 }

@@ -1,7 +1,9 @@
-package android.jochemkleine.com.popularmovies;
+package android.jochemkleine.com.popularmovies.networking;
 
 import android.content.Context;
 import android.graphics.pdf.PdfDocument;
+import android.jochemkleine.com.popularmovies.data.Movie;
+import android.jochemkleine.com.popularmovies.ui.MovieOverview;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
@@ -61,7 +63,7 @@ public class FetchMovieTask extends AsyncTask<Object, Void, ArrayList<Movie>> {
                 Uri builtUri = Uri.parse(MOVIE_DATA_BASE_URL).buildUpon()
                         .appendQueryParameter(SORT_PATH, "popular")
                         .appendQueryParameter(PAGE, Integer.toString(i))
-                        .appendQueryParameter(API_KEY_PARAM, "api_key")
+                        .appendQueryParameter(API_KEY_PARAM, "fbca96e0df3f8f1c439b24a9af702b75")
                         .build();
 
                 URL movieURL = new URL(builtUri.toString());
@@ -110,7 +112,9 @@ public class FetchMovieTask extends AsyncTask<Object, Void, ArrayList<Movie>> {
     @Override
     protected void onPostExecute(ArrayList<Movie> currentMovies) {
         if (currentMovies != null) {
+
             mMovieOverview.updateCurrentMovies(currentMovies);
+            mMovieOverview.syncFetchedMoviesWithDb();
             mMovieOverview.updateAdapter();
         } else {
             mMovieOverview.loadingErrorToast();
@@ -121,7 +125,9 @@ public class FetchMovieTask extends AsyncTask<Object, Void, ArrayList<Movie>> {
     private void getMovieDataFromJson(String recentMoviesJsonStr)
             throws JSONException {
 
+
         final String TMDB_RESULTS = "results";
+        final String TMDB_ID = "id";
         final String TMDB_TITLE = "title";
         final String TMDB_OVERVIEW = "overview";
         final String TMDB_VOTE_AVERAGE = "vote_average";
@@ -135,6 +141,7 @@ public class FetchMovieTask extends AsyncTask<Object, Void, ArrayList<Movie>> {
         for (int i = 0; i < 20; i++) {
             Movie movie = new Movie();
             JSONObject currentMovie = moviesArray.getJSONObject(i);
+            movie.setId(Integer.parseInt(currentMovie.getString(TMDB_ID)));
             movie.setTitle(currentMovie.getString(TMDB_TITLE));
             movie.setOverview(currentMovie.getString(TMDB_OVERVIEW));
             movie.setPosterPath(currentMovie.getString(TMDB_POSTER_PATH));
