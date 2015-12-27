@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/activity_movie_details"
+    tools:context="android.jochemkleine.com.popularmovies.ui.m"
+    android:background="@color/background_material_light"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+          <LinearLayout
+              android:layout_margin="5dp"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              android:background="@drawable/border">
+
+              <TextView
+                  android:layout_margin="5dp"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="Movie Information"
+                  android:textSize="@dimen/abc_text_size_large_material"
+                  android:textColor="#000000"
+                  android:fontFamily="sans-serif-light"
+                  android:textStyle="bold"
+                  />
+
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal"
+                  android:layout_marginRight="5dp"
+                  android:layout_marginLeft="5dp"
+                  android:layout_marginTop="2dp"
+                  android:layout_marginBottom="2dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Movie Title"
+                            android:textSize="@dimen/abc_text_size_medium_material"
+                            android:textColor="#000000"
+                            android:fontFamily="sans-serif-light"
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:layout_marginRight="20dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/abc_text_size_medium_material"
+                            android:text="Terminator: Genysis "
+                            android:gravity="right"
+                            android:id="@+id/movieTitle"
+                            android:textColor="#000000"
+                            android:fontFamily="sans-serif-light"
+                            />
+
+                    </LinearLayout>
+                  </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Released"
+                            android:textSize="@dimen/abc_text_size_medium_material"
+                            android:textColor="#000000"
+                            android:fontFamily="sans-serif-light"
+                            />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:layout_marginRight="20dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/abc_text_size_medium_material"
+                            android:text="May 2015 "
+                            android:gravity="right"
+                            android:textColor="#000000"
+                            android:fontFamily="sans-serif-light"
+                            android:id="@+id/releaseDate"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal"
+                  android:layout_marginRight="5dp"
+                  android:layout_marginLeft="5dp"
+                  android:layout_marginTop="2dp"
+                  android:layout_marginBottom="5dp"
+                  >
+
+                  <LinearLayout
+                      android:layout_width="0dp"
+                      android:layout_height="wrap_content"
+                      android:layout_weight="2">
+
+                      <TextView
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:text="Rating"
+                          android:textSize="@dimen/abc_text_size_medium_material"
+                          android:textColor="#000000"
+                          android:fontFamily="sans-serif-light"
+                          />
+
+                      </LinearLayout>
+
+                  <LinearLayout
+                      android:layout_width="0dp"
+                      android:layout_height="wrap_content"
+                      android:layout_weight="3"
+                      android:layout_marginRight="20dp">
+
+                      <TextView
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:textSize="@dimen/abc_text_size_medium_material"
+                          android:text="0/10 "
+                          android:gravity="right"
+                          android:id="@+id/rating"
+                          android:textColor="#000000"
+                          android:fontFamily="sans-serif-light"/>
+
+                  </LinearLayout>
+
+
+              </LinearLayout>
+          </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border"
+            android:layout_marginTop="2dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginBottom="5dp"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:layout_margin="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Movie Synopsis"
+                android:textSize="@dimen/abc_text_size_large_material"
+                android:textColor="#000000"
+                android:fontFamily="sans-serif-light"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_margin="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:id="@+id/movie_plot"
+                android:fontFamily="sans-serif-light"
+                android:textColor="#000000"
+                android:textSize="@dimen/abc_text_size_small_material"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/border"
+            android:layout_marginTop="2dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="Trailers"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-light"
+                android:textSize="@dimen/abc_text_size_large_material"
+                android:textColor="#000000"
+                />
+
+            <android.jochemkleine.com.popularmovies.ui.NestedListView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fillViewport="true"
+                android:layout_margin="@dimen/movie_detail_screen_edge_margin"
+                android:id="@+id/trailerList"
+                android:divider="@null"
+                android:dividerHeight="0dp"
+                android:clickable="false">
+
+            </android.jochemkleine.com.popularmovies.ui.NestedListView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border"
+            android:layout_marginTop="2dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginBottom="5dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="User Reviews"
+                android:textSize="@dimen/abc_text_size_large_material"
+                android:textColor="#000000"
+                android:fontFamily="sans-serif-light"
+                android:textStyle="bold"
+                android:layout_margin="5dp"/>
+
+            <android.jochemkleine.com.popularmovies.ui.NestedListView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@null"
+                android:dividerHeight="0dp"
+                android:clickable="false"
+                android:id="@+id/reviewList">
+
+            </android.jochemkleine.com.popularmovies.ui.NestedListView>
+
+
+
+        </LinearLayout>
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

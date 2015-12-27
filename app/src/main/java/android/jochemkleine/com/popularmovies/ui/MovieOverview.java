@@ -61,6 +61,7 @@ public class MovieOverview extends ActionBarActivity implements LoaderManager.Lo
     private static ArrayList<Movie> favMovieList;
 
     private static int CURSOR_LOADER_ID = 1;
+    private boolean mTwoPane;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +71,12 @@ public class MovieOverview extends ActionBarActivity implements LoaderManager.Lo
         getSupportLoaderManager().initLoader(CURSOR_LOADER_ID, null, this);
         mContentResolver = this.getContentResolver();
 
+
+        System.out.println("CHECKING FOR TWO PANES") ;
+        if (findViewById(R.id.item_detail_container) != null){
+            mTwoPane = true;
+            System.out.println("TWO PANE VIEW DETECTED");
+        }
         if (savedInstanceState == null || !savedInstanceState.containsKey("allMovieList")
                 || !savedInstanceState.containsKey("sortCriteria")
                 || savedInstanceState.get("allMovieList") == null) {
@@ -140,11 +147,27 @@ public class MovieOverview extends ActionBarActivity implements LoaderManager.Lo
         } else {
             m = allMovieList.get(movieIndex);
         }
-        Intent i = new Intent(this, MovieDetails.class);
-        i.putExtra("selectedMovie", m);
-        i.putExtra("movieIndex", movieIndex);
-        i.putExtra("movieOverview", this);
-        startActivity(i);
+
+        // DETERMINE WHETHER THIS IS A 2 PANE LAYOUT
+
+        if (mTwoPane) {
+
+            System.out.println("Constructing second pane.");
+            Bundle gg = new Bundle();
+            gg.putSerializable("selectedMovie", m);
+            gg.putSerializable("movieOverview", this);
+            MovieDetails fragment = new MovieDetails();
+            fragment.setArguments(gg);
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.item_detail_container, fragment)
+                    .commit();
+        } else {
+            Intent i = new Intent(this, MovieDetailActivity.class);
+            i.putExtra("selectedMovie", m);
+            i.putExtra("movieIndex", movieIndex);
+            i.putExtra("movieOverview", this);
+            startActivity(i);
+        }
     }
 
     @Override

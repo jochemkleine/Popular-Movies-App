@@ -21,9 +21,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.MovieDetails"
+            android:name=".ui.MovieDetailActivity"
             android:icon="@drawable/icon_1"
-            android:label="@string/title_activity_movie_details">
+            android:label="@string/title_activity_movie_details"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
 
@@ -36,10 +37,6 @@
             android:authorities="android.jochemkleine.com.popularmovies.data"
             android:enabled="true"/>
 
-        <activity
-            android:name=".ui.MovieReviews"
-            android:label="@string/title_activity_movie_reviews">
-        </activity>
     </application>
 
 </manifest>

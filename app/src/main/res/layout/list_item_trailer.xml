@@ -10,11 +10,11 @@
 
     <Button
         android:layout_width="0dp"
-        android:layout_height="80dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
         android:id="@+id/trailerButton"
         android:layout_weight="1"
         android:background="@drawable/youtube_icon2"/>
@@ -28,6 +28,8 @@
         android:layout_gravity="center"
         android:id="@+id/trailerNameTextView"
         android:layout_weight="1"
-        android:textSize="20dp"/>
+        android:fontFamily="sans-serif-light"
+        android:textSize="@dimen/abc_text_size_medium_material"
+        android:textColor="#000000"/>
 
 </LinearLayout>

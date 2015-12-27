@@ -33,18 +33,24 @@ public class ReviewListAdapter extends ArrayAdapter {
     public View getView(final int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = LayoutInflater.from(getContext());
         View customView = inflater.inflate(R.layout.list_item_review, parent, false);
-
         TextView content = (TextView) customView.findViewById(R.id.reviewContent);
         content.setText(mReviewArrayList.get(position).getComments());
         content.setMovementMethod(new ScrollingMovementMethod());
         TextView author = (TextView) customView.findViewById(R.id.reviewAuthor);
         author.setText(mReviewArrayList.get(position).getAuthor());
         return customView;
+
     }
 
     @Override
     public int getCount (){
         return mReviewArrayList.size();
+    }
+
+    class ViewHolder {
+        TextView content;
+        TextView author;
+
     }
 }
 
