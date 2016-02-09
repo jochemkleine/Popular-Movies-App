@@ -16,6 +16,7 @@ import android.net.Uri;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.MenuItemCompat;
+import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.Toolbar;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
@@ -32,6 +33,7 @@ import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
@@ -59,6 +61,9 @@ public class MovieDetails extends Fragment {
     private View mRootView;
     private MovieDetailActivity mMovieDetailActivity;
     private ArrayList<Review> mReviewArrayList;
+    private NestedScrollView scrollView;
+    private ListView reviewListView;
+    private ListView trailerListView;
 
     public MovieDetails (){
 
@@ -75,6 +80,7 @@ public class MovieDetails extends Fragment {
         this.mMovieOverview = (MovieOverview) b.get("movieOverview");
         //mMovieDetailActivity = (MovieDetailActivity) b.get("movieDetailActivity");
         mMovieDetailActivity = (MovieDetailActivity) this.getActivity();
+
     }
 
     @Override
@@ -120,10 +126,13 @@ public class MovieDetails extends Fragment {
 
         mMovieDetailActivity.setFavouriteButtonSkin(selectedMovie.isFavourite());
 
-
+        trailerListView = (ListView) mRootView.findViewById(R.id.trailerList);
+        trailerListView.setFocusable(false);
         fetchTrailers();
         setTrailerList();
 
+        reviewListView = (ListView) mRootView.findViewById(R.id.reviewList);
+        reviewListView.setFocusable(false);
         fetchReviews();
         setReviewList();
 
@@ -134,6 +143,17 @@ public class MovieDetails extends Fragment {
              shareUrl = trailerList.get(0).getURL();
         }
         mMovieDetailActivity.initShareButton(shareUrl);
+
+     /*   final NestedScrollView  mScrollView = (NestedScrollView) rootView.findViewById(R.id.nestedScrollView);
+        //scrollView.scrollTo(0, scrollView.getBottom());
+        final LinearLayout linearLayout = (LinearLayout) rootView.findViewById(R.id.parentLinearLayout);
+        mScrollView.post(new Runnable() {
+            public void run() {
+                mScrollView.scrollTo(0, linearLayout.getTop());
+            }
+        });
+        */
+
         return rootView;
     }
 
@@ -149,11 +169,11 @@ public class MovieDetails extends Fragment {
 
     public void setReviewList () {
         if ( mReviewArrayList != null) {
-            ListView reviewList = (ListView) mRootView.findViewById(R.id.reviewList);
+
             ListAdapter listAdapter = null;
             listAdapter = new ReviewListAdapter(getActivity(), mReviewArrayList);
-            reviewList.setAdapter(listAdapter);
-            reviewList.setVisibility(View.VISIBLE);
+            reviewListView.setAdapter(listAdapter);
+            reviewListView.setVisibility(View.VISIBLE);
         }
     }
 
@@ -187,11 +207,10 @@ public class MovieDetails extends Fragment {
 
     public void setTrailerList () {
         if ( trailerList != null) {
-            ListView trailerList = (ListView) mRootView.findViewById(R.id.trailerList);
             ListAdapter listAdapter = null;
             listAdapter = new TrailerListAdapter(mContext, selectedMovie, this , this.trailerList);
-            trailerList.setAdapter(listAdapter);
-            trailerList.setVisibility(View.VISIBLE);
+            trailerListView.setAdapter(listAdapter);
+            trailerListView.setVisibility(View.VISIBLE);
 
         }
     }
